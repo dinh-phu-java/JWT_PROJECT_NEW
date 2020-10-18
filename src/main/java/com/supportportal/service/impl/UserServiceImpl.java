@@ -18,7 +18,7 @@ import java.util.Date;
 
 @Service
 @Transactional
-@Qualifier("UserDetailService")
+@Qualifier("UserDetailsService")
 public class UserServiceImpl implements UserService, UserDetailsService {
 
     private Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         this.userRepository = userRepository;
     }
 
-    
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.findUserByUsername(username);
