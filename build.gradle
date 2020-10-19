@@ -23,6 +23,7 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 	implementation 'com.auth0:java-jwt:3.10.0'
 	compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+	compile group: 'com.google.guava', name: 'guava', version: '28.1-jre'
 
 }
 
