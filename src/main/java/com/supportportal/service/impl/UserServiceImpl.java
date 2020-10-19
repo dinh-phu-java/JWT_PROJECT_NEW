@@ -25,7 +25,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 import static com.supportportal.constant.UserImplConstant.*;
 
@@ -47,7 +46,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     public UserServiceImpl(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder, LoginAttemptService loginAttemptService) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
-        this.loginAttemptService=loginAttemptService;
+        this.loginAttemptService = loginAttemptService;
     }
 
 
@@ -71,13 +70,13 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     private void validateLoginAttempt(User user) {
-        if(user.isNotLocked()){
-            if (this.loginAttemptService.hasExceededMaxAttempts(user.getUsername())){
+        if (user.isNotLocked()) {
+            if (this.loginAttemptService.hasExceededMaxAttempts(user.getUsername())) {
                 user.setNotLocked(false);
-            }else{
+            } else {
                 user.setNotLocked(true);
             }
-        }else{
+        } else {
             this.loginAttemptService.evictUserFromLoginAttemptCache(user.getUsername());
         }
     }
