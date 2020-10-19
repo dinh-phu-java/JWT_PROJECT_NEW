@@ -1,7 +1,5 @@
 package com.supportportal.enumeration;
 
-import com.supportportal.constant.Authority;
-
 import static com.supportportal.constant.Authority.*;
 
 public enum Role {
@@ -9,7 +7,7 @@ public enum Role {
     ROLE_HR(HR_AUTHORITIES),
     ROLE_MANAGER(MANAGER_AUTHORITIES),
     ROLE_ADMIN(ADMIN_AUTHORITIES),
-    ROLE_SUPER_USER(SUPER_USER_AUTHORITIES);
+    ROLE_SUPER_USER(SUPER_ADMIN_AUTHORITIES);
 
     private String[] authorities;
 

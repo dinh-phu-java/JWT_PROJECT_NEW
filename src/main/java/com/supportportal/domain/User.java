@@ -133,11 +133,11 @@ public class User implements Serializable {
         this.joinDate = joinDate;
     }
 
-    public String getRoles() {
+    public String getRole() {
         return role;
     }
 
-    public void setRoles(String role) {
+    public void setRole(String role) {
         this.role = role;
     }
 
